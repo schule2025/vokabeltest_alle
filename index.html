@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <!-- NEU: Themen-Tabs -->
+      <!-- Themen-Tabs -->
       <div class="scroll-x">
         <div class="tabs" id="topics"></div>
       </div>
@@ -103,7 +103,7 @@
 
 <script>
 /* ----------------- THEMEN-DATEN ----------------- */
-/* Bestehendes Thema „Büro“ aus deinem Tool */
+/* Thema „Büro“ */
 const OFFICE_LEXICON = [
   {de:"der Computer",ru:"компьютер",tr:"bilgisayar",fa:"رایانه",ar:"كمبيوتر",fr:"ordinateur",examples:{de:"Der Computer ist langsam."}},
   {de:"der Drucker",ru:"принтер",tr:"yazıcı",fa:"چاپگر",ar:"طابعة",fr:"imprimante",examples:{de:"Der Drucker geht nicht."}},
@@ -132,7 +132,7 @@ const OFFICE_LEXICON = [
 ];
 const OFFICE_PHRASES = [
   {de:"Guten Tag.",ru:"Здравствуйте.",tr:"İyi günler.",fa:"روز بخیر.",ar:"نهاركم سعيد.",fr:"Bonjour."},
-  {de:"Können Sie mir helfen?",ru:"Можете мне помочь?",tr:"Bana yardım eder misiniz?",fa:"می‌توانید به من کمک کنید؟",ar:"هل يمكنك مساعدتي؟",fr:"Pouvez-vous m’aider ?"},
+  {de:"Können Sie mir helfen?",ru:"Можете мне помочь?",tr:"Bana yardım eder misiniz?",fa:"می‌توانید به мен کمک کنید؟",ar:"هل يمكنك مساعدتي؟",fr:"Pouvez-vous m’aider ?"},
   {de:"Ich habe ein Problem.",ru:"У меня проблема.",tr:"Bir sorunum var.",fa:"من مشکلی دارم.",ar:"لديّ مشكلة.",fr:"J’ai un problème."},
   {de:"Der Drucker geht nicht.",ru:"Принтер не работает.",tr:"Yazıcı çalışmıyor.",fa:"پرینتر کار نمی‌کند.",ar:"الطابعة لا تعمل.",fr:"L’imprimante ne marche pas."},
   {de:"Der Bildschirm ist schwarz.",ru:"Экран чёрный.",tr:"Ekran siyah.",fa:"صفحه سیاه است.",ar:"الشاشة سوداء.",fr:"L’écran est noir."},
@@ -143,7 +143,7 @@ const OFFICE_PHRASES = [
   {de:"Auf Wiedersehen!",ru:"До свидания!",tr:"Hoşça kalın!",fa:"خداحافظ!",ar:"إلى اللقاء!",fr:"Au revoir !"}
 ];
 
-/* Beispiel-Thema „Schule“ (kleines Starter-Set – kannst du löschen/erweitern) */
+/* Beispiel-Thema „Schule“ */
 const SCHOOL_LEXICON = [
   {de:"die Schule",ru:"школа",tr:"okul",fa:"مدرسه",ar:"مدرسة",fr:"école",examples:{de:"Die Schule beginnt um acht."}},
   {de:"der Lehrer",ru:"учитель",tr:"öğretmen",fa:"معلم",ar:"معلّم",fr:"enseignant",examples:{de:"Der Lehrer erklärt die Aufgabe."}},
@@ -154,33 +154,68 @@ const SCHOOL_PHRASES = [
   {de:"Können Sie das wiederholen?",ru:"Можете повторить?",tr:"Tekrar edebilir misiniz?",fa:"می‌توانید تکرار کنید؟",ar:"هل يمكنك الإعادة؟",fr:"Pouvez-vous répéter ?"},
 ];
 
-  /* Thema: Berufe (A1) – Vokabeln (erweitert) */
+/* Thema: Berufe (A1) – Vokabeln (mit weiblichen Formen) */
 const BERUFE_LEXICON = [
+  // Grundformen + weibliche Formen
   {de:"der Arzt", ru:"врач", tr:"doktor|hekim", fa:"پزشک", ar:"طبيب|دكتور", fr:"médecin", examples:{de:"Der Arzt hilft kranken Menschen."}},
-  {de:"der Lehrer", ru:"учитель", tr:"öğretmen", fa:"معلم", ar:"معلّم", fr:"enseignant|professeur", examples:{de:"Der Lehrer unterrichtet Kinder."}},
-  {de:"die Verkäuferin", ru:"продавщица", tr:"satıcı", fa:"فروشنده", ar:"بائعة", fr:"vendeuse", examples:{de:"Die Verkäuferin arbeitet im Geschäft."}},
-  {de:"der Koch", ru:"повар", tr:"aşçı", fa:"آشپز", ar:"طاهٍ|طباخ", fr:"cuisinier", examples:{de:"Der Koch arbeitet im Restaurant."}},
-  {de:"der Polizist", ru:"полицейский", tr:"polis", fa:"پلیس", ar:"شرطي", fr:"policier", examples:{de:"Der Polizist sorgt für Sicherheit."}},
+  {de:"die Ärztin", ru:"врач", tr:"doktor|hekim", fa:"پزشک", ar:"طبيبة", fr:"médecin (f.)", examples:{de:"Die Ärztin hilft kranken Menschen."}},
 
-  // Erweiterte Standardberufe
+  {de:"der Lehrer", ru:"учитель", tr:"öğretmen", fa:"معلم", ar:"معلّم", fr:"enseignant|professeur", examples:{de:"Der Lehrer unterrichtet Kinder."}},
+  {de:"die Lehrerin", ru:"учительница", tr:"öğretmen", fa:"معلم", ar:"معلّمة", fr:"enseignante|professeure", examples:{de:"Die Lehrerin unterrichtet Kinder."}},
+
+  {de:"der Verkäufer", ru:"продавец", tr:"satıcı", fa:"فروشنده", ar:"بائع", fr:"vendeur", examples:{de:"Der Verkäufer arbeitet im Geschäft."}},
+  {de:"die Verkäuferin", ru:"продавщица", tr:"satıcı", fa:"فروشنده", ar:"بائعة", fr:"vendeuse", examples:{de:"Die Verkäuferin arbeitet im Geschäft."}},
+
+  {de:"der Koch", ru:"повар", tr:"aşçı", fa:"آشپز", ar:"طاهٍ|طباخ", fr:"cuisinier", examples:{de:"Der Koch arbeitet im Restaurant."}},
+  {de:"die Köchin", ru:"повар", tr:"aşçı", fa:"آشپز", ar:"طاهية", fr:"cuisinière", examples:{de:"Die Köchin arbeitet im Restaurant."}},
+
+  {de:"der Polizist", ru:"полицейский", tr:"polis", fa:"پلیس", ar:"شرطي", fr:"policier", examples:{de:"Der Polizist sorgt für Sicherheit."}},
+  {de:"die Polizistin", ru:"полицейская", tr:"polis", fa:"پلیس", ar:"شرطية", fr:"policière", examples:{de:"Die Polizistin sorgt für Sicherheit."}},
+
   {de:"die Krankenschwester", ru:"медсестра", tr:"hemşire", fa:"پرستار", ar:"ممرضة", fr:"infirmière", examples:{de:"Die Krankenschwester arbeitet im Krankenhaus."}},
-  {de:"der Ingenieur", ru:"инженер", tr:"mühendis", fa:"مهندس", ar:"مهندس", fr:"ingénieur", examples:{de:"Der Ingenieur baut Brücken."}},
+  {de:"der Krankenpfleger", ru:"медбрат", tr:"hemşire", fa:"پرستار", ar:"ممرض", fr:"infirmier", examples:{de:"Der Krankenpfleger arbeitet im Krankenhaus."}},
+
+  {de:"der Ingenieur", ru:"инженер", tr:"mühendis", fa:"مهندس", ar:"مهندس", fr:"ingénieur", examples:{de:"Der Ingenieur plant Brücken."}},
+  {de:"die Ingenieurin", ru:"инженер", tr:"mühendis", fa:"مهندس", ar:"مهندسة", fr:"ingénieure", examples:{de:"Die Ingenieurin планt Brücken."}},
+
   {de:"der Mechaniker", ru:"механик", tr:"tamirci", fa:"مکانیک", ar:"ميكانيكي", fr:"mécanicien", examples:{de:"Der Mechaniker repariert Autos."}},
+  {de:"die Mechanikerin", ru:"механик", tr:"tamirci", fa:"مکانیک", ar:"ميكانيكية", fr:"mécanicienne", examples:{de:"Die Mechanikerin repariert Autos."}},
+
   {de:"der Bäcker", ru:"пекарь", tr:"fırıncı", fa:"نانوا", ar:"خباز", fr:"boulanger", examples:{de:"Der Bäcker backt Brot."}},
+  {de:"die Bäckerin", ru:"пекарь", tr:"fırıncı", fa:"نانوا", ar:"خبازة", fr:"boulangère", examples:{de:"Die Bäckerin backt Brot."}},
+
   {de:"der Friseur", ru:"парикмахер", tr:"kuaför", fa:"آرایشگر", ar:"حلاق", fr:"coiffeur", examples:{de:"Der Friseur schneidet Haare."}},
+  {de:"die Friseurin", ru:"парикмахер", tr:"kuaför", fa:"آرایشگر", ar:"حلّاقة", fr:"coiffeuse", examples:{de:"Die Friseurin schneidet Haare."}},
+
   {de:"der Fahrer", ru:"водитель", tr:"şoför", fa:"راننده", ar:"سائق", fr:"conducteur", examples:{de:"Der Fahrer fährt den Bus."}},
-  {de:"der Landwirt", ru:"фермер", tr:"çiftçi", fa:"کشاورز", ar:"فلاح", fr:"agriculteur", examples:{de:"Der Landwirt arbeitet auf dem Feld."}},
+  {de:"die Fahrerin", ru:"водитель", tr:"şофör", fa:"راننده", ar:"سائقة", fr:"conductrice", examples:{de:"Die Fahrerin fährt den Bus."}},
+
+  {de:"der Landwirt", ru:"фермер", tr:"çiftçi", fa:"کشاورز", ar:"مزارع", fr:"agriculteur", examples:{de:"Der Landwirt arbeitet auf dem Feld."}},
+  {de:"die Landwirtin", ru:"фермер", tr:"çiftçi", fa:"کشاورز", ar:"مزارعة", fr:"agricultrice", examples:{de:"Die Landwirtin arbeitet auf dem Feld."}},
+
   {de:"der Bauarbeiter", ru:"строитель", tr:"inşaat işçisi", fa:"کارگر ساختمانی", ar:"عامل بناء", fr:"ouvrier du bâtiment", examples:{de:"Der Bauarbeiter baut ein Haus."}},
-  {de:"der Student", ru:"студент", tr:"öğrenci", fa:"دانشجو", ar:"طالب جامعي", fr:"étudiant", examples:{de:"Der Student lernt an der Universität."}}
+  {de:"die Bauarbeiterin", ru:"строительница", tr:"inşaat işçisi", fa:"کارگر ساختمانی", ar:"عاملة بناء", fr:"ouvrière du bâtiment", examples:{de:"Die Bauarbeiterin baut ein Haus."}},
+
+  {de:"der Student", ru:"студент", tr:"öğrenci", fa:"دانشجو", ar:"طالب جامعي", fr:"étudiant", examples:{de:"Der Student lernt an der Universität."}},
+  {de:"die Studentin", ru:"студентка", tr:"öğrenci", fa:"دانشجو", ar:"طالبة جامعية", fr:"étudiante", examples:{de:"Die Studentin lernt an der Universität."}}
 ];
 
+/* Thema: Berufe (A1) – Phrasen */
+const BERUFE_PHRASES = [
+  {de:"Was sind Sie von Beruf?", ru:"Кто вы по профессии?", tr:"Mesleğiniz nedir?", fa:"شغل شما چیست؟", ar:"ما مهنتك؟", fr:"Quelle est votre profession ?"},
+  {de:"Ich bin Lehrer.", ru:"Я учитель.", tr:"Ben öğretmenim.", fa:"من معلم هستم.", ar:"أنا معلّم.", fr:"Je suis enseignant."},
+  {de:"Ich bin Lehrerin.", ru:"Я учительница.", tr:"Ben öğretmenim.", fa:"من معلم هستم.", ar:"أنا معلّمة.", fr:"Je suis enseignante."},
+  {de:"Er ist Arzt.", ru:"Он врач.", tr:"O doktor.", fa:"او پزشک است.", ar:"هو طبيب.", fr:"Il est médecin."},
+  {de:"Sie ist Ärztin.", ru:"Она врач.", tr:"O doktor.", fa:"او پزشک است.", ar:"هي طبيبة.", fr:"Elle est médecin."},
+  {de:"Er arbeitet im Restaurant.", ru:"Он работает в ресторане.", tr:"O restoranda çalışıyor.", fa:"او در رستوران کار می‌کند.", ar:"هو يعمل في المطعم.", fr:"Il travaille au restaurant."},
+  {de:"Sie arbeitet im Geschäft.", ru:"Она работает в магазине.", tr:"O mağazada çalışıyor.", fa:"او در فروشگاه کار می‌کند.", ar:"هي تعمل في المتجر.", fr:"Elle travaille au magasin."}
+];
 
-/* Zentrale Themenstruktur: einfach weitere Einträge hinzufügen */
+/* Zentrale Themenstruktur */
 const TOPICS = {
-  "Büro": { lexicon: OFFICE_LEXICON, phrases: OFFICE_PHRASES },
-  "Schule": { lexicon: SCHOOL_LEXICON, phrases: SCHOOL_PHRASES },
-  "Berufe": { lexicon: BERUFE_LEXICON, phrases: BERUFE_PHRASES } // ← NEU
-  // Beispiel: "Supermarkt": { lexicon: [...], phrases: [...] }
+  "Büro":   { lexicon: OFFICE_LEXICON,  phrases: OFFICE_PHRASES },
+  "Schule": { lexicon: SCHOOL_LEXICON,  phrases: SCHOOL_PHRASES },
+  "Berufe": { lexicon: BERUFE_LEXICON,  phrases: BERUFE_PHRASES }
 };
 
 /* ----------------- Hilfsfunktionen ----------------- */
@@ -210,14 +245,14 @@ function currentLexicon(){ return TOPICS[state.topic].lexicon; }
 function currentPhrases(){ return TOPICS[state.topic].phrases || []; }
 function currentItem(){ return currentLexicon()[ state.order[state.idx] ]; }
 
-function applyRTL(){document.body.dir=isRTL(state.lang)?'rtl':'ltr';}
+function applyRTL(){ document.body.dir = isRTL(state.lang)?'rtl':'ltr'; }
 function renderProgress(){
   document.getElementById('progress').textContent=`Fortschritt: ${state.correct} richtig · ${state.wrong} falsch`;
   document.getElementById('streak').textContent=`Streak: ${state.streak}`;
 }
 function newRound(){
   const len=currentLexicon().length;
-  state.order=shuffle([...Array(len).keys()]);
+  state.order = len > 0 ? shuffle([...Array(len).keys()]) : [];
   state.idx=0;
   render();
 }
@@ -226,7 +261,6 @@ function setTopic(name){
   state.idx=0;
   state.correct=0; state.wrong=0; state.streak=0;
   document.getElementById('title').textContent=`Vokabeltrainer · A1 — ${name}`;
-  // rebuild order for this topic
   newRound();
 }
 function buildTopicTabs(){
@@ -248,6 +282,10 @@ function buildTopicTabs(){
 /* ----------------- Rendering ----------------- */
 function buildLearn(){
   const item=currentItem();
+  if(!item){
+    panel.innerHTML = `<div class="center hint">Keine Einträge für dieses Thema.</div>`;
+    return;
+  }
   panel.innerHTML=
    `<div class="box stack">
       <div class="center big">${item.de}</div>
@@ -259,6 +297,10 @@ function buildLearn(){
 
 function buildTest(){
   const item=currentItem();
+  if(!item){
+    panel.innerHTML = `<div class="center hint">Keine Einträge für dieses Thema.</div>`;
+    return;
+  }
   const others = currentLexicon().filter(x=>x!==item).map(x=>x[state.lang]);
   const opts = shuffle([item[state.lang], ...shuffle(others).slice(0,3)]);
   panel.innerHTML=
@@ -336,12 +378,11 @@ document.getElementById('btnPrev').onclick=()=>{
 };
 document.getElementById('btnNext').onclick=()=>{
   const maxLen = currentLexicon().length;
-  state.idx = (state.idx+1)%Math.max(1,maxLen);
+  state.idx = maxLen ? (state.idx+1)%maxLen : 0;
   render();
 };
 document.getElementById('btnTip').onclick=()=>{
-  // Tipp aus aktuellem Modus: Vokabeln-Tipp
-  const item=currentItem?.();
+  const item = currentItem();
   if(item){
     alert("Tipp: "+(item[state.lang].split('|')[0].slice(0,2))+"...");
   }else{
@@ -352,7 +393,7 @@ document.getElementById('btnReset').onclick=()=>{
   state.correct=0; state.wrong=0; state.streak=0;
   renderProgress();
 };
-langSel.onchange=()=>{ state.lang=langSel.value; render(); };
+langSel.onchange=()=>{ state.lang=langSel.value; try{localStorage.setItem('vt_lang', state.lang);}catch(e){} render(); };
 modeTabs.querySelectorAll('.tab').forEach(t=>{
   t.onclick=()=>{
     state.mode=t.dataset.mode;
@@ -368,7 +409,6 @@ modeTabs.querySelectorAll('.tab').forEach(t=>{
   try{
     const savedLang = localStorage.getItem('vt_lang');
     if(savedLang) { state.lang=savedLang; langSel.value=savedLang; }
-    langSel.addEventListener('change', ()=>localStorage.setItem('vt_lang', state.lang));
   }catch(e){}
   buildTopicTabs();
   newRound();
