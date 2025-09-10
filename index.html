@@ -154,10 +154,32 @@ const SCHOOL_PHRASES = [
   {de:"Können Sie das wiederholen?",ru:"Можете повторить?",tr:"Tekrar edebilir misiniz?",fa:"می‌توانید تکرار کنید؟",ar:"هل يمكنك الإعادة؟",fr:"Pouvez-vous répéter ?"},
 ];
 
+  /* Thema: Berufe (A1) – Vokabeln (erweitert) */
+const BERUFE_LEXICON = [
+  {de:"der Arzt", ru:"врач", tr:"doktor|hekim", fa:"پزشک", ar:"طبيب|دكتور", fr:"médecin", examples:{de:"Der Arzt hilft kranken Menschen."}},
+  {de:"der Lehrer", ru:"учитель", tr:"öğretmen", fa:"معلم", ar:"معلّم", fr:"enseignant|professeur", examples:{de:"Der Lehrer unterrichtet Kinder."}},
+  {de:"die Verkäuferin", ru:"продавщица", tr:"satıcı", fa:"فروشنده", ar:"بائعة", fr:"vendeuse", examples:{de:"Die Verkäuferin arbeitet im Geschäft."}},
+  {de:"der Koch", ru:"повар", tr:"aşçı", fa:"آشپز", ar:"طاهٍ|طباخ", fr:"cuisinier", examples:{de:"Der Koch arbeitet im Restaurant."}},
+  {de:"der Polizist", ru:"полицейский", tr:"polis", fa:"پلیس", ar:"شرطي", fr:"policier", examples:{de:"Der Polizist sorgt für Sicherheit."}},
+
+  // Erweiterte Standardberufe
+  {de:"die Krankenschwester", ru:"медсестра", tr:"hemşire", fa:"پرستار", ar:"ممرضة", fr:"infirmière", examples:{de:"Die Krankenschwester arbeitet im Krankenhaus."}},
+  {de:"der Ingenieur", ru:"инженер", tr:"mühendis", fa:"مهندس", ar:"مهندس", fr:"ingénieur", examples:{de:"Der Ingenieur baut Brücken."}},
+  {de:"der Mechaniker", ru:"механик", tr:"tamirci", fa:"مکانیک", ar:"ميكانيكي", fr:"mécanicien", examples:{de:"Der Mechaniker repariert Autos."}},
+  {de:"der Bäcker", ru:"пекарь", tr:"fırıncı", fa:"نانوا", ar:"خباز", fr:"boulanger", examples:{de:"Der Bäcker backt Brot."}},
+  {de:"der Friseur", ru:"парикмахер", tr:"kuaför", fa:"آرایشگر", ar:"حلاق", fr:"coiffeur", examples:{de:"Der Friseur schneidet Haare."}},
+  {de:"der Fahrer", ru:"водитель", tr:"şoför", fa:"راننده", ar:"سائق", fr:"conducteur", examples:{de:"Der Fahrer fährt den Bus."}},
+  {de:"der Landwirt", ru:"фермер", tr:"çiftçi", fa:"کشاورز", ar:"فلاح", fr:"agriculteur", examples:{de:"Der Landwirt arbeitet auf dem Feld."}},
+  {de:"der Bauarbeiter", ru:"строитель", tr:"inşaat işçisi", fa:"کارگر ساختمانی", ar:"عامل بناء", fr:"ouvrier du bâtiment", examples:{de:"Der Bauarbeiter baut ein Haus."}},
+  {de:"der Student", ru:"студент", tr:"öğrenci", fa:"دانشجو", ar:"طالب جامعي", fr:"étudiant", examples:{de:"Der Student lernt an der Universität."}}
+];
+
+
 /* Zentrale Themenstruktur: einfach weitere Einträge hinzufügen */
 const TOPICS = {
   "Büro": { lexicon: OFFICE_LEXICON, phrases: OFFICE_PHRASES },
   "Schule": { lexicon: SCHOOL_LEXICON, phrases: SCHOOL_PHRASES },
+  "Berufe": { lexicon: BERUFE_LEXICON, phrases: BERUFE_PHRASES }, // ← NEU
   // Beispiel: "Supermarkt": { lexicon: [...], phrases: [...] }
 };
 
